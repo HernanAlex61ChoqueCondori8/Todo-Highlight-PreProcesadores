@@ -1,0 +1,168 @@
+.editing-section {
+	background-color: #f59d9d;
+
+	width: 100vw;
+	height: 100vh;
+}
+
+.displacement {
+	background-color: #ffffff;
+
+	position: relative;
+
+	width: 6rem;
+	height: 100vh;
+
+	display: flex;
+
+	transition-duration: 0.5s;
+	&--show {
+		width: 40rem;
+	}
+
+	&__logo-content {
+		position: absolute;
+		width: 4rem;
+
+		left: 1rem;
+		top: 1rem;
+	}
+	&__logo {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	&__content {
+		@include flexCenter;
+		flex-direction: column;
+
+		background-color: #f5d5d5;
+
+		flex: 1 0 0%;
+
+		overflow: hidden;
+	}
+	&__activator {
+		@include flexCenter;
+		background-color: #ffffff;
+
+		flex: 0 0 6rem;
+	}
+	&__bar-content {
+		@include flexCenter;
+		flex-direction: column;
+
+		position: relative;
+
+		width: 4rem;
+		height: 4rem;
+	}
+	&__bar {
+		background-color: #242424;
+
+		width: 80%;
+		height: 0.4rem;
+
+		border-radius: 10rem;
+		&--margin {
+			margin: 0.8rem 0;
+		}
+	}
+}
+
+.option {
+	width: 100%;
+
+	overflow: hidden;
+	&--border {
+		border-bottom: 2px solid #665454;
+	}
+	&__content {
+		background-color: #f7b5b5;
+		width: 100%;
+		max-height: 0;
+
+		transition-duration: 0.5s;
+		overflow: hidden;
+		&--border {
+			border-left: 0.5rem solid #ffffff;
+		}
+		&--flex {
+			@include flexCenter;
+			justify-content: flex-start;
+		}
+		&--show {
+			max-height: 60rem;
+		}
+		&--show-sub {
+			padding-left: 6rem;
+			max-height: 60rem;
+		}
+	}
+	&__header {
+		transition-delay: 0s;
+		transition-duration: 0.3s;
+		color: #000000;
+		&--sub {
+			transition-duration: inherit;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			&-select {
+				background-color: #f37b7b;
+				color: #ffffff;
+			}
+		}
+		&--eraser {
+			padding-right: 1rem;
+		}
+		&:hover {
+			background-color: #f37b7b;
+			color: #ffffff;
+		}
+	}
+	&__text {
+		font-size: 2rem;
+		font-weight: 400;
+
+		padding: 1rem 2rem;
+
+		transition-duration: 0.5s;
+		&--sub {
+			padding-left: 4rem;
+		}
+		&--sub-sub {
+			padding-left: 6rem;
+		}
+		&:hover {
+			font-size: 2.1rem;
+			font-weight: 500;
+		}
+	}
+	&__content-sum {
+		@include flexCenter;
+		@include cleanInput;
+
+		background-color: transparent;
+
+		width: 3rem;
+		height: 3rem;
+
+		border-radius: 100%;
+
+		transition-duration: 0.5s;
+		&:hover {
+			background-color: hsla(0, 0%, 100%, 0.4);
+		}
+		&--select {
+			background-color: hsla(0, 0%, 100%, 1);
+			color: #000000;
+		}
+	}
+	&__sum {
+		background-color: hsla(0, 0%, 100%, 0);
+
+		font-size: 2rem;
+	}
+}

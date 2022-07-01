@@ -1,0 +1,17 @@
+{
+	"name": "pre-procesadores",
+	"version": "1.0.0",
+	"description": "Practice SASS y PUG",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"compile:sass": "node-sass ./sass/style.scss ./css/style.css -w",
+		"compile:pug": "pug -w ./components/index.pug -o ./ -P"
+	},
+	"author": "Hernan",
+	"license": "ISC",
+	"devDependencies": {
+		"node-sass": "^7.0.1",
+		"pug-cli": "^1.0.0-alpha6"
+	}
+}

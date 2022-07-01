@@ -1,0 +1,323 @@
+.color {
+	@include borderInput;
+
+	display: inline-block;
+
+	transition-duration: 0.5s;
+	&:hover {
+		border: 1px solid hsla(0, 0%, 0%, 0.8);
+	}
+	&__content {
+		display: flex;
+		align-items: center;
+	}
+	&__wrapper {
+		background-color: #000000;
+
+		position: relative;
+
+		width: 2.5rem;
+		height: 2.5rem;
+
+		margin-right: 0.5rem;
+	}
+	&__input {
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		opacity: 0;
+	}
+	&__code {
+		color: #000000;
+		font-size: 1.4rem;
+	}
+}
+
+.opacity {
+	@include borderInput;
+
+	display: inline-block;
+
+	transition-duration: 0.5s;
+	&:hover {
+		border: 1px solid #000000;
+	}
+	&__content {
+		@include flexCenter;
+	}
+	&__change {
+		@include flexCenter;
+		@include cleanInput;
+
+		background-color: #ffffff;
+		position: relative;
+
+		width: 3rem;
+		height: 3rem;
+
+		border-radius: 0.5rem;
+
+		transition-duration: 0.5s;
+		&:hover {
+			background-color: #e9e9e9;
+		}
+	}
+	&__image {
+		display: block;
+		width: 65%;
+		height: 65%;
+	}
+	&__input {
+		@include cleanInput;
+		@include borderInput;
+		background-color: transparent;
+
+		width: 5rem;
+		margin-left: 0.5rem;
+
+		transition-duration: 0.5s;
+		&:focus {
+			border: 1px solid #000000;
+		}
+		&::placeholder {
+			color: #000000;
+		}
+	}
+}
+
+.border {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	&__value {
+		@include cleanInput;
+		@include borderInput;
+		background-color: transparent;
+
+		width: 4rem;
+
+		transition-duration: 0.5s;
+		&:hover {
+			border: 1px solid #000000;
+		}
+		&::placeholder {
+			color: #000000;
+		}
+	}
+}
+
+.choice {
+	@include flexCenter;
+	position: relative;
+
+	margin: 0 1rem;
+	&__text {
+		@include flexCenter;
+
+		font-size: 1.5rem;
+		font-weight: 400;
+
+		margin-right: 0.5rem;
+	}
+	&__extend {
+		@include cleanInput;
+		background-color: transparent;
+
+		position: relative;
+
+		width: 2rem;
+		height: 2rem;
+
+		margin-left: 0.5rem;
+
+		transition-duration: 0.5s;
+		&:hover {
+			border: 1px solid #000000;
+		}
+	}
+	&__arrow {
+		display: block;
+		width: 70%;
+
+		margin: auto;
+	}
+	&__select {
+		background-color: #ffffff;
+
+		position: absolute;
+
+		width: 100%;
+		height: 0;
+
+		display: flex;
+		flex-direction: column;
+
+		text-align: center;
+
+		top: 2rem;
+		z-index: 100;
+		overflow: hidden;
+
+		transition-duration: 0.5s;
+		&--show {
+			height: 4rem;
+		}
+	}
+	&__option {
+		@include flexCenter;
+
+		background-color: #ffffff;
+		width: 100%;
+		height: 100%;
+		&:hover {
+			background-color: #fca9a9;
+		}
+	}
+}
+
+.extend {
+	@include cleanInput;
+
+	background-color: transparent;
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+
+	padding: 0.5rem;
+	margin-left: 1rem;
+
+	border-radius: 0.5rem;
+
+	transition-duration: 0.5s;
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	&:hover {
+		background-color: hsla(0, 0%, 100%, 0.7);
+	}
+	&--select {
+		background-color: hsla(0, 0%, 100%, 1);
+	}
+}
+
+.radius {
+	display: flex;
+
+	&__content {
+		display: flex;
+		align-items: center;
+	}
+	&__box {
+		position: relative;
+
+		width: 2rem;
+		height: 2rem;
+
+		margin-right: 0.5rem;
+	}
+	&__image {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	&__input {
+		@include borderInput;
+		background-color: transparent;
+
+		width: 4rem;
+
+		outline: none;
+
+		transition-duration: 0.5s;
+		&:hover {
+			border: 1px solid #000000;
+		}
+		&:focus {
+			border: 1px solid #000000;
+		}
+		&--hidden {
+			width: 0rem;
+			padding: 0rem;
+		}
+	}
+}
+.corner {
+	display: flex;
+	&__content {
+		@include flexCenter;
+
+		max-width: 0rem;
+
+		margin-left: 0.5rem;
+
+		overflow: hidden;
+		transition-delay: 0.5s;
+		transition-duration: 0.5s;
+		&--show {
+			max-width: 20rem;
+		}
+	}
+	&__input {
+		@include cleanInput;
+		width: 2.5rem;
+		height: 2.5rem;
+
+		margin-right: 1rem;
+
+		opacity: 0.5;
+		text-align: center;
+
+		transition-duration: 0.5s;
+		&:hover {
+			opacity: 0.8;
+		}
+		&:focus {
+			opacity: 1;
+		}
+		&--left-up {
+			&:hover {
+				border-top: 2px solid #000000;
+				border-radius: 1rem 0 0 0;
+			}
+		}
+		&--right-up {
+			&:hover {
+				border-radius: 0 1rem 0 0;
+				border-right: 2px solid #000000;
+			}
+		}
+		&--right-down {
+			&:hover {
+				border-radius: 0 0 1rem 0;
+				border-bottom: 2px solid #000000;
+			}
+		}
+		&--left-down {
+			&:hover {
+				border-radius: 0 0 0 1rem;
+				border-left: 2px solid #000000;
+			}
+		}
+	}
+	&__more {
+		@include flexCenter;
+		@include cleanInput;
+		background-color: #ffffff;
+
+		width: 3rem;
+		height: 3rem;
+
+		transition-duration: 0.5s;
+		&:hover {
+			background-color: #d8d4d4;
+		}
+	}
+	&__text {
+		display: block;
+		font-size: 2rem;
+	}
+}

@@ -1,0 +1,15 @@
+include ./components.pug
+main.main-page
+  section.editing-section
+    div.displacement
+      div.displacement__logo-content
+        img.displacement__logo(src="./resources/images/highlighter.png",alt="logo")
+      div.displacement__content
+        +menu()
+      div.displacement__activator
+        div.displacement__bar-content
+          div.displacement__bar
+          div.displacement__bar.displacement__bar--margin
+          div.displacement__bar
+script(type="module",src="./js/settingMenu.js")
+script(type="module",src="./js/settingMarket.js")

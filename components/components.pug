@@ -1,0 +1,161 @@
+-var borderType =["solid","double"];
+mixin choice()
+	div.choice
+		h3.choice__text.choice__text--border solid
+			button.choice__extend
+				img.choice__arrow(src="../resources/images/down-arrow.png",alt="")
+		div.choice__select
+			each opt in borderType
+				option.choice__option.choice__option--border(value=opt)
+
+mixin border()
+	div.border
+		input.border__value(type="text",placeholder="0px")
+		+choice()
+		+color()
+
+mixin radius()
+	div.radius
+		div.radius__content
+			div.radius__box
+				img.radius__image(src="../resources/images/frame.png",)
+			input.radius__input(type="text", placeholder="0px")
+		div.corner
+			div.corner__content
+				input.corner__input.corner__input--left-up(type="text",placeholder="0")
+				input.corner__input.corner__input--right-up(type="text",placeholder="0")
+				input.corner__input.corner__input--right-down(type="text",placeholder="0")
+				input.corner__input.corner__input--left-down(type="text",placeholder="0")
+			div.corner__more
+				span.corner__text +
+
+mixin color()
+	div.color
+		div.color__content
+			div.color__wrapper
+				input.color__input(type="color")
+			p.color__code #000000
+
+mixin opacity()
+	div.opacity
+		div.opacity__content
+			button.opacity__change
+				img.opacity__image(src="./resources/images/view.png" alt="")
+			input.opacity__input(type="text",placeholder="100%")
+
+mixin textSpacing()
+	div.text__spacing
+		input.text__spacing-text(type="text",placeholder="0px" )
+		div.text__box-spacing
+			img.text__image-spacing(src="../resources/images/letter.png")
+
+mixin textWeigth
+	div.weight
+		div.weight__box
+			img.weight__image(src="../resources/images/width.png")
+		div.weight__select
+			button.weight__arrow.weight__arrow--up
+				img.weight__arrow-image(src="../resources/images/up-arrow.png")
+			input.weight__style(type="text", placeholder="0")
+			button.weight__arrow.weight__arrow--down
+				img.weight__arrow-image(src="../resources/images/down-arrow.png")
+
+mixin text()
+	+color()
+	button.text__italic
+		img.text__italic-image(src="../resources/images/italic.png")
+	button.text__setting Aa
+	+textSpacing()
+	+textWeigth
+
+mixin marker()
+	div.option
+		div.option__header
+			h2.option__text.option__text--sub Marker
+		div.option__content
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text.option__text--sub-sub Background
+				div.option__content
+					+color()
+					+opacity()
+					button.extend
+						img.extend__img(src="./resources/images/stretch.png",disabled="true")
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text.option__text--sub-sub Border
+				div.option__content.option__content--flex
+					+border()
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text.option__text--sub-sub Outline
+				div.option__content.option__content--flex
+					+border()
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text.option__text--sub-sub Radius
+				div.option__content.option__content--flex
+					+radius()
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text.option__text--sub-sub Text
+				div.option__content.option__content--flex
+					+text()
+
+mixin before()
+	div.option
+		div.option__header.option__header--sub.option__header--eraser
+			h2.option__text.option__text--sub Before
+			button.option__content-sum
+				span.option__sum +
+
+mixin after()
+	div.option
+		div.option__header.option__header--sub.option__header--eraser
+			h2.option__text.option__text--sub After
+			button.option__content-sum
+				span.option__sum +
+
+mixin afterBefore()
+	div.after-before
+		div.after-before__join
+			div.after-before__box
+				img.after-before__image(src="./resources/images/link.png")
+		div.after-before__content
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text Border
+				div.option__content.option__content--flex
+					+border()
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text Margin
+				div.option__content.option__content--flex
+					+radius()
+			div.option
+				div.option__header.option__header--sub
+					h2.option__text Text
+				div.option__content.option__content--flex
+					+color()
+					+textWeigth()
+					button.text__italic
+						img.text__italic-image(src="../resources/images/italic.png")
+					button.text__setting Aa
+
+mixin menu()
+	div.option.option--border
+		div.option__header.option__header--first
+			h2.option__text Feactures
+		div.option__content.option__content--border
+			+marker()
+			+before()
+			+afterBefore()
+			+after()
+	div.option.option--border
+		div.option__header.option__header--first
+				h2.option__text List
+		div.option__content.option__content--border
+	div.option.option--border
+		div.option__header.option__header--first
+				h2.option__text Setting
+		div.option__content.option__content--border
